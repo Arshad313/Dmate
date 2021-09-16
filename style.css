@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url("./assets/bgh.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.nav-bar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 8vh;
+
+}
+
+.nav-logo {
+    color: white;
+    letter-spacing: 3px;
+    padding: 0 20px;
+}
+
+.nav-logo img {
+    width: 130px;
+}
+
+.nav-links {
+    flex: 1;
+    float: center;
+}
+
+.nav-links ul {
+    margin-left: 50px;
+    display: inline;
+    float: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 25px;
+}
+
+.nav-links a {
+    color: purple;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: purple;
+    display: block;
+    margin: auto;
+    transition: .5s;
+
+}
+
+
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.banner-title {
+    margin: 80px 130px;
+    color: purple;
+}
+
+.banner-title h1 {
+    font-size: 70px;
+}
+
+.banner-title span {
+    color: rgb(0, 0, 0);
+}
+
+.nav-bar .fas {
+    display: none;
+}
+
+.section-1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(236, 230, 230, 0.8), rgba(190, 130, 240, 0.8));
+    border-radius: 3px;
+    text-align: left;
+    padding: 13vmin 5vmin 20vmin 10vmin;
+    font-family: var(--Rubik);
+
+}
+
+.section-1 .heading h1 {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.4em 0;
+    font-size: 3em;
+}
+
+.section-1 .para p {
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.section-2 {
+    margin-top: 20px;
+}
+
+.section-2 h1 {
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.img-container {}
+
+.img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.img-container p {
+    font-size: 1rem;
+    text-align: center;
+    color: purple;
+}
+
+.img-container:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.full-img {
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+
+}
+
+.full-img.open {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal p {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+
+
+}
+
+.contact {
+    height: 10vh;
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+
+
+}
+
+.cntct {
+    position: absolute;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.3rem;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.cntct p {
+    padding-top: 30px;
+}
+
+
+
+
+
+
+@media (max-width: 860px) {
+    .banner-title {
+        margin: 80px 40px;
+    }
+
+    .banner-title h1 {
+        font-size: 50px;
+    }
+
+    .nav-bar {
+        padding: 10px 30px;
+
+
+    }
+
+    .fa-bars {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    .nav-bar .fas {
+        display: block;
+        color: #fff;
+        margin: 10px 25px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+
+
+
+    .nav-links {
+        height: 100vh;
+        width: 200px;
+        background-color: rgb(0, 0, 0);
+        top: 0;
+        right: -200px;
+        float: left;
+        position: absolute;
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 1;
+
+    }
+
+    .nav-links.close {
+        opacity: 0;
+    }
+
+    .nav-links ul a {
+        display: block;
+        float: left;
+    }
+
+
+
+    .img-container {
+        overflow: hidden;
+    }
+}
